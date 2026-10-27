@@ -153,6 +153,31 @@
   @media (max-width:900px){.hero .slides{max-width:340px;width:100%}.about .pic{max-width:220px}}
   @media (max-width:900px){.quotes,.call{grid-template-columns:1fr}.hero{grid-template-columns:1fr;gap:28px;padding-top:6px}.hero .photo{max-width:340px}h1{font-size:36px}.grid3{grid-template-columns:1fr}.list{grid-template-columns:1fr}.about{grid-template-columns:1fr}.about .photo{max-width:220px}}
   @media (prefers-reduced-motion:reduce){.slides img{transition:opacity .01s;transform:none}.reveal{opacity:1;transform:none;transition:none}.btn,.card{transition:none}}
+  /* v3: visuals + data */
+  .pic-ic{aspect-ratio:16/10;background:radial-gradient(circle at 80% 20%,#8A3A46,var(--wine) 60%,var(--wine-d));display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:var(--cream)}
+  .pic-ic span{font-size:54px;font-weight:800;opacity:.35}
+  .pic-ic svg{width:64px;height:64px;fill:none;stroke:var(--cream);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .vs-col{border-radius:22px;padding:24px;border:1.5px solid var(--line)}
+  .vs-col h3{margin:0 0 16px;font-size:18px}
+  .vs-col.bad{background:#fff}.vs-col.good{background:var(--wine);color:#FFF8EE;border-color:var(--wine)}
+  .meter{position:relative;height:34px;border-radius:999px;background:rgba(124,111,106,.12);margin:0 0 10px;overflow:hidden}
+  .good .meter{background:rgba(240,217,177,.15)}
+  .meter i{position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;background:linear-gradient(90deg,#C9A57E,#9C6B5A);transition:width 1.4s var(--ease)}
+  .good .meter i{background:linear-gradient(90deg,var(--cream),#E9C48F)}
+  .in .meter i,.in .bar i{width:var(--w)}
+  .meter span{position:relative;z-index:1;line-height:34px;padding-left:14px;font-weight:700;font-size:14px}
+  .good .meter span{color:var(--wine-d)}
+  .worlds{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+  .bars{display:grid;gap:10px}
+  .bar{display:grid;grid-template-columns:70px 1fr 42px;align-items:center;gap:10px;font-weight:700;font-size:14px}
+  .bar i{display:block;height:14px;width:0;border-radius:999px;background:linear-gradient(90deg,var(--wine),#9C4A57);transition:width 1.4s var(--ease)}
+  .bar b{color:var(--wine-d);text-align:right}
+  .stats{display:grid;gap:12px}
+  .stat{background:var(--wine);color:#FFF8EE;border-radius:20px;padding:18px 22px}
+  .stat b{display:block;font-size:34px;line-height:1.1;color:var(--cream);font-weight:800}
+  .stat span{font-size:14px;color:#EBD9CF}
+  @media (max-width:900px){.vs,.worlds{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -163,17 +188,15 @@
   <div>
     <span class="pill">Work with me</span>
     <span class="role">Business Consultant · Project Management</span>
-    <h1>Build in Africa from wherever you live, <em>with people you can trust</em>.</h1>
-    <p class="lead">You have a plan. But who can you trust? Where do you start? And how do you check the work from far away? I help you find the right people, make a clear plan and keep your project moving.</p>
+    <h1>Your dream is in Africa. <em>Your life is here.</em> I close the gap.</h1>
+    <p class="lead">You send money, you wait, you hope. Then the updates stop. I know that feeling, because I build between both worlds myself. I help you find people you can trust, make a clear plan and see your project move, even from far away.</p>
     <a class="btn-s" href="#book">Book your introduction call ↓</a>
   </div>
   
   <div class="slides" id="slides" aria-label="Photos of Queenie Kessie">
-    <img class="on" src="img/queenie-1.jpg" alt="Queenie Kessie speaking at an event" style="object-position:50% 30%">
-    <img src="img/queenie-headshot.jpg" alt="Queenie Kessie at an event" style="object-position:50% 75%" loading="lazy">
-    <img src="img/queenie-2.jpg" alt="Queenie Kessie at a conference" style="object-position:50% 25%" loading="lazy">
-    <img src="img/queenie-ghana-embassy-slide.jpg" alt="Queenie Kessie at the Embassy of Ghana in Brussels" style="object-position:50% 50%" loading="lazy">
-    <img src="img/queenie-portrait.jpg" alt="Portrait of Queenie Kessie" style="object-position:30% 50%" loading="lazy">
+    <img class="on" src="img/queenie-1.jpg" alt="Queenie Kessie speaking on stage" style="object-position:50% 30%">
+    <img src="img/queenie-2.jpg" alt="Queenie Kessie in front of international flags" style="object-position:50% 25%" loading="lazy">
+    <img src="img/queenie-portrait.jpg" alt="Portrait of Queenie Kessie in white" style="object-position:30% 50%" loading="lazy">
   </div>
 </div>
 
@@ -202,12 +225,54 @@
 
 <section class="reveal">
   <div class="wrap">
+    <h2>The real cost of the wrong person</h2>
+    <p class="sub">It's never just the money. It's the months you lose, the trust you break and the dream you start to doubt.</p>
+    <div class="vs">
+      <div class="vs-col bad"><h3>Doing it alone, from far away</h3>
+        <div class="meter"><i style="--w:88%"></i><span>Stress</span></div>
+        <div class="meter"><i style="--w:80%"></i><span>Money at risk</span></div>
+        <div class="meter"><i style="--w:22%"></i><span>Control</span></div>
+        <div class="meter"><i style="--w:15%"></i><span>Peace of mind</span></div></div>
+      <div class="vs-col good"><h3>With the right people around you</h3>
+        <div class="meter"><i style="--w:25%"></i><span>Stress</span></div>
+        <div class="meter"><i style="--w:20%"></i><span>Money at risk</span></div>
+        <div class="meter"><i style="--w:85%"></i><span>Control</span></div>
+        <div class="meter"><i style="--w:90%"></i><span>Peace of mind</span></div></div>
+    </div>
+    <p class="note" style="text-align:center">An illustration of how it feels, not a measurement.</p>
+  </div>
+</section>
+
+<section class="reveal alt">
+  <div class="wrap">
+    <h2>Between both worlds</h2>
+    <p class="sub">My network is on both sides. So is the community that follows my work.</p>
+    <div class="worlds">
+      <div class="card"><h3>Where my audience lives</h3>
+        <div class="bars">
+          <div class="bar"><span>Ghana</span><i style="--w:100%"></i><b>35%</b></div>
+          <div class="bar"><span>Brazil</span><i style="--w:55%"></i><b>19%</b></div>
+          <div class="bar"><span>Belgium</span><i style="--w:33%"></i><b>12%</b></div>
+          <div class="bar"><span>USA</span><i style="--w:18%"></i><b>6%</b></div>
+          <div class="bar"><span>UK</span><i style="--w:18%"></i><b>6%</b></div>
+        </div><p class="note">Instagram audience, autumn 2026</p></div>
+      <div class="stats">
+        <div class="stat"><b data-n="2018">2018</b><span>working with Ghana since</span></div>
+        <div class="stat"><b data-n="35200">35,200</b><span>views on one question: how do you manage a team in Ghana?</span></div>
+        <div class="stat"><b data-n="12">12</b><span>months building and running a local team for an international company</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
     <h2>What I help you do</h2>
     <p class="sub">From a big idea to a project that runs, even when you live far away.</p>
     <div class="pcards">
-      <div class="pcard"><img src="img/queenie-ghana-embassy.jpg" alt="Queenie Kessie at the Embassy of Ghana in Brussels" style="object-position:50% 50%" loading="lazy"><div><h3>Find people you can trust</h3><p>Partners, team members and contacts on the ground. I check them before I introduce you.</p></div></div>
-      <div class="pcard"><img src="img/queenie-1.jpg" alt="Queenie Kessie speaking" style="object-position:50% 40%" loading="lazy"><div><h3>Make a clear plan</h3><p>Which country, which steps, what it costs. Your big idea becomes a first plan you can act on.</p></div></div>
-      <div class="pcard"><img src="img/queenie-2.jpg" alt="Queenie Kessie at a conference" style="object-position:50% 30%" loading="lazy"><div><h3>Keep your project moving</h3><p>Clear tasks, clear deadlines and regular updates. You see what is done without chasing people.</p></div></div>
+      <div class="pcard"><div class="pic-ic"><span>01</span><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M3.5 19c.6-3.4 3-5.2 5.5-5.2s4.9 1.8 5.5 5.2M14 14.6c2.6-.4 5.2 1 5.9 4.4"/></svg></div><div><h3>Find people you can trust</h3><p>Partners, team members and contacts on the ground. I check them before I introduce you.</p></div></div>
+      <div class="pcard"><div class="pic-ic"><span>02</span><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8.5 9h7M8.5 12.5h7M8.5 16h4"/></svg></div><div><h3>Make a clear plan</h3><p>Which country, which steps, what it costs. Your big idea becomes a first plan you can act on.</p></div></div>
+      <div class="pcard"><div class="pic-ic"><span>03</span><svg viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg></div><div><h3>Keep your project moving</h3><p>Clear tasks, clear deadlines and regular updates. You see what is done without chasing people.</p></div></div>
     </div>
     <div class="chips"><span>Market research</span><span>Business setup</span><span>Local teams</span><span>Partnerships</span><span>Project management</span></div>
   </div>
@@ -242,13 +307,14 @@
 <section class="reveal">
   <div class="wrap about">
     
-    <div class="pic"><img src="img/queenie-about-center.jpg" alt="Queenie Kessie with her Africa 100 award and certificate" style="object-position:50% 0%" loading="lazy"></div>
+    <div class="pic"><img src="img/queenie-portrait.jpg" alt="Queenie Kessie" style="object-position:30% 20%" loading="lazy"></div>
     <div>
       <h2>Hi, I'm Queenie.</h2>
       <p class="sub" style="margin-bottom:12px">Born in Belgium. Rooted in Ghana. I build between both worlds.</p>
       <p class="sub" style="margin-bottom:0">I know what it's like to have a big plan for Africa and still ask: who do I trust, and where do I start? A good introduction is only the start. We check the right partners and agree on a plan that works.</p>
       
       <ul class="story">
+        <li><div class="yr">2018</div><div><b>First business with Ghana</b><span>Logistics between Europe and Ghana, the start of my network on the ground</span></div></li>
         <li><div class="yr">2023</div><div><b>Nominee, Africa's Under 40 CEOs</b><span>Nominated for this award in 2023</span></div></li>
         <li><div class="yr">2024</div><div><b>Africa 100 The Exceptionals</b><span>Listed among 100 young Africans to watch</span></div></li>
         <li><div class="yr">2025</div><div><b>Chair, IOM Diaspora Advisory Board</b><span>A voice for the diaspora in Belgium and Luxembourg</span></div></li>
@@ -319,6 +385,8 @@
     dots.children[0].classList.add('on'); start();
     document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(t):start());
   })();
+  // count-up for stats
+  (function(){const els=document.querySelectorAll('.stat b[data-n]');const o=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;o.unobserve(e.target);const el=e.target,n=+el.dataset.n;if(n>=1900&&n<2100)return;let t0=null;const f=ts=>{t0??=ts;const k=Math.min(1,(ts-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-k,3))).toLocaleString('en-US');if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}),{threshold:.4});els.forEach(e=>o.observe(e))})();
 </script>
 </body>
 </html>
