@@ -178,6 +178,33 @@
   .stat b{display:block;font-size:34px;line-height:1.1;color:var(--cream);font-weight:800}
   .stat span{font-size:14px;color:#EBD9CF}
   @media (max-width:900px){.vs,.worlds{grid-template-columns:1fr}}
+
+  /* v4 (27/10): licht zoals Queenies voorbeeld, wijn alleen als accent */
+  body{background:#FBF8F4}
+  .band{background:#FBF8F4;color:var(--ink)}
+  .band::after{display:none}
+  .band .brand{color:var(--wine)!important}
+  .band h1{color:#1F1A1B;font-size:58px}
+  .band h1 em{color:var(--wine);display:block}
+  .band .lead{color:#5E5557}
+  .band .role{color:var(--wine);opacity:1;display:flex;align-items:center;gap:12px}
+  .band .role::before{content:"";width:28px;height:1px;background:var(--wine);opacity:.5}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .band .btn{background:var(--wine);color:#fff;border-radius:6px;box-shadow:none;padding:15px 24px;font-size:15px}
+  .band .btn-s{border:1.5px solid #E3D8CF;color:#2B1F21;background:#fff;border-radius:6px;padding:14px 22px}
+  .band .btn-s:hover{background:#F6EFE8}
+  .meta{margin:16px 0 0;color:#8A7F7A;font-size:14px}.meta b{color:#2B1F21}
+  .slides{border:0;border-radius:4px;box-shadow:none;background:#EFE7DE;outline:1px solid #E3D8CF;outline-offset:14px}
+  .dots button{background:rgba(43,31,33,.25)}.dots button.on{background:var(--wine)}
+  .badges{background:#fff;color:var(--ink);border-top:1px solid #EFE6DC;border-bottom:1px solid #EFE6DC}
+  .badge{border-color:#EFE6DC;background:#FBF8F4}.badge svg{stroke:var(--wine)}.badge b{color:#2B1F21}.badge small{color:#8A7F7A}
+  .vs-col.good,.stat,.cta{background:#fff;color:var(--ink);border:1.5px solid #EFE6DC}
+  .vs-col.good .meter span{color:var(--ink)} .stat b{color:var(--wine)} .stat span{color:#5E5557}
+  .cta .sub,.cta .note{color:#5E5557} .cta .btn{background:var(--wine);color:#fff}
+  .pic-ic{background:#F6EFE8;color:var(--wine)} .pic-ic svg{stroke:var(--wine)} .pic-ic span{opacity:.25}
+  .card .n,.story .yr{background:var(--wine);color:#fff}
+  section.alt{background:#F6F0EA}
+  @media (max-width:900px){.band h1{font-size:38px}}
 </style>
 </head>
 <body>
@@ -186,11 +213,10 @@
 
 <div class="wrap hero">
   <div>
-    <span class="pill">Work with me</span>
-    <span class="role">Business Consultant · Project Management</span>
-    <h1>Your dream is in Africa. <em>Your life is here.</em> I close the gap.</h1>
-    <p class="lead">You send money, you wait, you hope. Then the updates stop. I know that feeling, because I build between both worlds myself. I help you find people you can trust, make a clear plan and see your project move, even from far away.</p>
-    <a class="btn-s" href="#book">Book your introduction call ↓</a>
+    <span class="role">Business consultancy &amp; project management</span>
+    <h1>Your next chapter in Africa, <em>with a clear plan.</em></h1>
+    <p class="lead">I help people in the diaspora start and run projects in Africa. We work out a realistic plan, I connect you with local people I trust, and I keep track of the work while you are abroad.</p>
+    <div class="hero-cta"><a class="btn" href="https://calendly.com/queeniekessie-vc-x/30min" target="_blank" rel="noopener">Book an introduction →</a><a class="btn-s" href="#services">Explore my services</a></div><p class="meta">Introduction call · <b>30 minutes</b> · €50</p>
   </div>
   
   <div class="slides" id="slides" aria-label="Photos of Queenie Kessie">
@@ -267,7 +293,7 @@
 
 <section class="reveal">
   <div class="wrap">
-    <h2>What I help you do</h2>
+    <h2 id="services">What I help you do</h2>
     <p class="sub">From a big idea to a project that runs, even when you live far away.</p>
     <div class="pcards">
       <div class="pcard"><div class="pic-ic"><span>01</span><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M3.5 19c.6-3.4 3-5.2 5.5-5.2s4.9 1.8 5.5 5.2M14 14.6c2.6-.4 5.2 1 5.9 4.4"/></svg></div><div><h3>Find people you can trust</h3><p>Partners, team members and contacts on the ground. I check them before I introduce you.</p></div></div>
