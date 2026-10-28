@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiaspoPlug · Become a founding member</title>
+<meta name="description" content="Find people you can trust, across borders. Answer a few quick questions and get into DiaspoPlug as a founding member.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  CONCEPT door AS Media (v2, 09/10). Nog NIET online, nog NIET naar Queenie gestuurd.
+  Kleuren + font volgens het DiaspoPlug/DCG-brandbook (Blue #004C9C, Dark-Blue #00356F, Green #5EB130, Montserrat).
+  Nog in te vullen voor livegang:
+   1. Web3Forms-key = TIJDELIJK de AS Media-key van de 90-day roadmap (inschrijvingen komen in as.official.agency@gmail.com). Later Queenie/DCG-key.
+   2. App-link = https://diaspoplug.com/en/signup (registratiepagina, werkt 09/10). Door Queenie te bevestigen.
+   3. Privacy-link = https://diaspoplug.com/en/privacy
+   4. Founding Member-badge: door developer laten bevestigen (we beloven hem op de pagina)
+   5. Logo = officieel bestand van diaspoplug.com (logo.svg + favicon.svg naast index.html)
+  Zelfde link voor @queeniekessie en @diaspora_connect_global, bron via ?src=ig-queenie / ig-dcg / yt / li.
+-->
+<style>
+  :root{--blue:#004C9C;--blue-d:#00356F;--green:#5EB130;--ink:#1B2433;--muted:#667085;--line:#E4E7EC;--bg:#F7F8FA;--card:#FFFFFF;--blue-l:#EBF2FA;--green-l:#EEF7E8;--grad:linear-gradient(100deg,#5EB130 0%,#2E8A6E 45%,#004D9D 100%);--ease:cubic-bezier(.22,1,.36,1)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Montserrat,system-ui,sans-serif;font-weight:500;color:var(--ink);background:var(--bg);line-height:1.55}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  header{padding:22px 0}
+  .logo{display:block;height:92px;width:auto;margin:-10px 0 -10px -14px}
+  @media (max-width:900px){.logo{height:72px;margin:-8px 0 -8px -10px}}
+  .hero{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"top card" "bottom card";column-gap:48px;align-content:center;padding:20px 20px 64px;min-height:calc(100vh - 80px)}
+  .h-top{grid-area:top;align-self:end}.h-bottom{grid-area:bottom;align-self:start}.card{grid-area:card;align-self:center}
+  .pill{display:inline-block;background:var(--green-l);color:#3E7F1C;font-weight:700;font-size:13px;padding:7px 13px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:48px;line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-1.2px}
+  h1 em{font-style:normal;color:var(--blue)}
+  .lead{font-size:18px;color:var(--muted);margin:0 0 26px;max-width:480px}
+  .perks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .perks li{display:flex;gap:10px;align-items:center;font-weight:600}
+  .perks li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--green-l);color:var(--green);font-weight:800;display:grid;place-content:center;font-size:13px}
+  .by{margin-top:26px;font-size:14px;color:var(--muted)}
+  .by b{color:var(--ink)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 18px 40px rgba(0,53,111,.08);min-height:520px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .back{border:0;background:none;color:var(--muted);font:inherit;font-weight:700;cursor:pointer;padding:4px 6px;border-radius:8px;visibility:hidden}
+  .back:hover{background:var(--bg)}
+  .bar{flex:1;height:8px;background:var(--blue-l);border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--blue);border-radius:99px;transition:width .35s ease}
+  .step-n{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+
+  .screen{display:none;flex:1;flex-direction:column}
+  .screen.on{display:flex;animation:inR .45s var(--ease) both}
+  .screen.on.back-in{animation-name:inL}
+  @keyframes inR{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+  @keyframes inL{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .screen.on .opt{animation:up .45s var(--ease) both}
+  .screen.on .opt:nth-child(1){animation-delay:.04s}.screen.on .opt:nth-child(2){animation-delay:.08s}.screen.on .opt:nth-child(3){animation-delay:.12s}.screen.on .opt:nth-child(4){animation-delay:.16s}.screen.on .opt:nth-child(5){animation-delay:.2s}.screen.on .opt:nth-child(6){animation-delay:.24s}.screen.on .opt:nth-child(7){animation-delay:.28s}.screen.on .opt:nth-child(8){animation-delay:.32s}.screen.on .opt:nth-child(9){animation-delay:.36s}
+  .cheer{animation:in .5s var(--ease) both}
+  /* hero bij laden */
+  .h-top>*,.h-bottom>*,.card,header .logo{animation:up .8s var(--ease) both}
+  header .logo{animation-delay:0s}.h-top .pill{animation-delay:.05s}.h-top h1{animation-delay:.12s}.h-top .lead{animation-delay:.2s}.card{animation-delay:.28s}.h-bottom>*:nth-child(1){animation-delay:.34s}.h-bottom>*:nth-child(2){animation-delay:.4s}
+  .bar i{background:var(--grad)!important}
+  .done .badge{animation:badge .7s var(--ease) both}
+  .done .medal{animation:up .6s var(--ease) .25s both}
+  .done h2{animation:up .6s var(--ease) .35s both}
+  .done p,.done .btn{animation:up .6s var(--ease) .45s both}
+  @keyframes badge{0%{transform:scale(.3) rotate(-20deg);opacity:0}60%{transform:scale(1.12) rotate(4deg);opacity:1}100%{transform:none}}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+  .screen h2{font-size:24px;line-height:1.25;margin:0 0 6px;letter-spacing:-.4px}
+  .screen .hint{color:var(--muted);font-size:14px;margin:0 0 18px}
+  .opts{display:grid;gap:10px}
+  .opt{width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:15px 16px;font:inherit;font-weight:600;font-size:15px;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:12px;transition:transform .2s var(--ease),border-color .2s,background .2s,box-shadow .2s}
+  .opt:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,53,111,.07)}
+  .opt:active{transform:scale(.985)}
+  .opt.sel .dot{animation:pop .3s var(--ease)}
+  @keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .opt:hover{border-color:var(--blue);background:var(--blue-l)}
+  .opt.sel{border-color:var(--blue);background:var(--blue-l)}
+  .opt .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #C3CAD5}
+  .opt.multi .dot{border-radius:6px}
+  .opt.sel .dot{border-color:var(--blue);background:var(--blue);box-shadow:inset 0 0 0 3px #fff}
+  .opt.multi.sel .dot{box-shadow:none;display:grid;place-content:center}
+  .opt.multi.sel .dot::after{content:"✓";color:#fff;font-size:12px;font-weight:800}
+
+  .btn{position:relative;overflow:hidden;display:block;text-align:center;text-decoration:none;width:100%;margin-top:auto;background:var(--grad);background-size:140% 100%;background-position:0 0;color:#fff;border:0;border-radius:999px;padding:16px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 8px 20px rgba(0,77,157,.18);transition:transform .25s var(--ease),box-shadow .25s var(--ease),background-position .5s var(--ease),opacity .2s}
+  .btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,77,157,.26)}
+  .btn:active{transform:translateY(0) scale(.98)}
+  .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%)}
+  .btn:hover::after{transform:translateX(120%);transition:transform .8s var(--ease)}
+  .btn:disabled{background:#C9D2DE;box-shadow:none;cursor:default;transform:none}
+  .btn:disabled::after{display:none}
+  .btn.green{background:var(--grad);background-size:140% 100%}
+  .spacer{height:18px}
+  .cheer{margin:0 0 6px;font-size:13px;font-weight:700;color:#3E7F1C}
+  .extra{display:none;margin-top:4px}
+  .extra.show{display:block;animation:in .25s ease}
+  .opt-l{font-weight:500;color:var(--muted)}
+  textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:15px;resize:vertical}
+  textarea:focus{outline:none;border-color:var(--blue)}
+  .btn.cont{display:none;margin-top:18px}
+  .btn.cont.show{display:block}
+  .reward{background:var(--green-l);color:#2F6A12;border-radius:12px;padding:12px 14px;font-size:14px;font-weight:600;margin:0 0 20px}
+  .medal{display:inline-block;margin:0 auto 14px;background:var(--green-l);color:#2F6A12;font-weight:800;font-size:12px;letter-spacing:1.5px;padding:6px 12px;border-radius:99px}
+
+  .intro h2{font-size:26px}
+  .intro .meta{display:flex;gap:16px;flex-wrap:wrap;margin:6px 0 22px;color:var(--muted);font-size:14px;font-weight:600}
+  .intro ol{margin:0 0 20px;padding-left:20px;color:var(--muted)}
+  .intro ol li{margin:4px 0}
+
+  label.f{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+  input[type=text],input[type=email]{width:100%;padding:14px 15px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:15px;background:#fff}
+  input[type=text]:focus,input[type=email]:focus{outline:none;border-color:var(--blue)}
+  .consent{display:flex;gap:10px;font-size:13px;color:var(--muted);margin:16px 0 18px;align-items:flex-start}
+  .consent input{margin-top:3px;accent-color:var(--blue);width:16px;height:16px;flex:none}
+  .consent a{color:var(--blue)}
+  .err{color:#C0362C;font-size:13px;font-weight:600;min-height:18px;margin-top:8px}
+
+  .done{text-align:center;justify-content:center}
+  .done .badge{width:84px;height:84px;margin:0 auto 12px;border-radius:50%;background:var(--grad);box-shadow:0 14px 30px rgba(0,77,157,.25);display:grid;place-content:center;color:#fff;font-size:34px;font-weight:800}
+  .done p{color:var(--muted);margin:0 0 22px}
+  .done .btn{margin-top:0}
+
+  .about{background:#fff;border-top:1px solid var(--line);padding:48px 0}
+  .about-in{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+  .about h3{font-size:24px;margin:0 0 10px;letter-spacing:-.4px}
+  .about p{margin:0 0 8px;color:var(--muted);max-width:520px}
+  .socials{display:grid;gap:22px}
+  .s-h{display:block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .s-row{display:flex;flex-wrap:wrap;gap:10px}
+  .soc{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 7px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
+  .soc:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,53,111,.10);border-color:transparent}
+  .soc .ic{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-content:center;transition:transform .35s var(--ease)}
+  .soc:hover .ic{transform:scale(1.08) rotate(-6deg)}
+  .soc .ic svg{width:18px;height:18px}
+  .soc .ic img{width:30px;height:30px}
+  .soc .tx{display:flex;flex-direction:column;line-height:1.15}
+  .soc b{font-size:14px}
+  .soc small{font-size:12px;color:var(--muted);font-weight:500}
+  .soc.ig .ic{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+  .soc.fb .ic{background:#1877F2}
+  .soc.li .ic{background:#0A66C2}
+  .soc.tt .ic{background:#000;box-shadow:-2px -2px 0 #25F4EE inset,2px 2px 0 #FE2C55 inset}
+  .soc.yt .ic{background:#FF0000}
+  .soc.web .ic{background:var(--grad)}
+  .soc.app .ic{background:#fff;border:1.5px solid var(--line)}
+  .about-in{grid-template-columns:1fr 1.4fr}
+  @media (max-width:900px){.about-in{grid-template-columns:1fr;gap:24px}}
+  @media (max-width:560px){.s-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.soc{padding:6px 10px 6px 6px;gap:8px;min-width:0}.soc .ic{width:32px;height:32px}.soc .tx{min-width:0}.soc small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+  footer{padding:26px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  @media (max-width:900px){.hero{grid-template-columns:1fr;grid-template-areas:"top" "card" "bottom";row-gap:24px;min-height:0;padding-top:4px;padding-left:16px;padding-right:16px}.lead{margin-bottom:0}h1{font-size:34px}.card{padding:22px;min-height:440px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><img class="logo" src="logo.svg" alt="DiaspoPlug" width="104" height="80"></div></header>
+
+<div class="wrap hero">
+  <div class="h-top">
+    <span class="pill">Launching in December · Founding members first</span>
+    <h1>Find people you can <em>trust</em>, across borders.</h1>
+    <p class="lead">One trusted place to connect, find opportunities and join circles. Wherever you are.</p>
+  </div>
+  <div class="h-bottom">
+    <ul class="perks">
+      <li>Get in before the official launch</li>
+      <li>Your answers shape what we build next</li>
+      <li>Be one of the first faces people meet</li>
+    </ul>
+    <p class="by">Built by <b>Queenie Kessie</b>, founder of Diaspora Connect Global</p>
+  </div>
+
+  <div class="card" id="quiz">
+    <div class="top">
+      <button class="back" id="back" type="button">← Back</button>
+      <div class="bar"><i id="bar"></i></div>
+      <span class="step-n" id="stepn"></span>
+    </div>
+
+    <!-- 0: intro -->
+    <div class="screen intro on" data-s="0">
+      <h2>Become a founding member</h2>
+      <div class="meta"><span>⏱ Takes about 90 seconds</span><span>🔒 No spam</span></div>
+      <ol>
+        <li>Answer 10 quick questions</li>
+        <li>Tell us where to send your access</li>
+        <li>Step straight into DiaspoPlug</li>
+      </ol>
+      <div class="reward">🏅 Early birds get a <b>Founding Member badge</b></div>
+      <button class="btn" type="button" data-next>Let's go</button>
+    </div>
+
+    <!-- 1 -->
+    <div class="screen" data-s="1" data-q="looking_for" data-multi="3">
+      <p class="cheer">Let's start with the fun part.</p>
+      <h2>What brings you to DiaspoPlug?</h2>
+      <p class="hint">Pick up to 3.</p>
+      <div class="opts">
+        <button class="opt multi" type="button"><span class="dot"></span>Find people I can trust for a project</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Find a job</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Find clients or customers</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Find business partners</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Join a community or circle</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Invest</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Move to another country</button>
+        <button class="opt multi" type="button" data-other><span class="dot"></span>Other</button>
+      </div>
+      <div class="extra"><label class="f" for="x-looking_for">What are you looking for?</label><input type="text" id="x-looking_for" placeholder="Tell us in a few words"></div>
+      <div class="spacer"></div>
+      <button class="btn" type="button" data-next disabled>Continue</button>
+    </div>
+
+    <!-- 2 -->
+    <div class="screen" data-s="2" data-q="country" data-text>
+      <p class="cheer">Nice. 9 to go.</p>
+      <h2>Where do you live?</h2>
+      <p class="hint">So we can connect you with people nearby, and far away.</p>
+      <label class="f" for="t-country">Country</label>
+      <input type="text" id="t-country" list="countries" placeholder="Start typing…" autocomplete="country-name">
+      <label class="f" for="t-city">City <span class="opt-l">(optional)</span></label>
+      <input type="text" id="t-city" placeholder="e.g. Brussels" autocomplete="address-level2">
+      <button class="btn" type="button" data-next disabled style="margin-top:22px">Continue</button>
+    </div>
+
+    <!-- 3 -->
+    <div class="screen" data-s="3" data-q="roots">
+      <p class="cheer">Good to know.</p>
+      <h2>Where are your roots?</h2>
+      <p class="hint">Tap one.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>The same country I live in</button>
+        <button class="opt" type="button" data-other><span class="dot"></span>Another country</button>
+        <button class="opt" type="button" data-other><span class="dot"></span>Several countries</button>
+      </div>
+      <div class="extra"><label class="f" for="x-roots">Which country or countries?</label><input type="text" id="x-roots" placeholder="e.g. Ghana, Jamaica, India…"></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <!-- 4 -->
+    <div class="screen" data-s="4" data-q="occupation">
+      <p class="cheer">You're flying through this.</p>
+      <h2>What do you do right now?</h2>
+      <p class="hint">Tap one.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>I'm employed</button>
+        <button class="opt" type="button"><span class="dot"></span>I run a business</button>
+        <button class="opt" type="button"><span class="dot"></span>I'm a freelancer or self-employed</button>
+        <button class="opt" type="button"><span class="dot"></span>I'm a student</button>
+        <button class="opt" type="button"><span class="dot"></span>I'm looking for work</button>
+        <button class="opt" type="button" data-other><span class="dot"></span>Other</button>
+      </div>
+      <div class="extra"><label class="f" for="x-occupation">Tell us in a few words</label><input type="text" id="x-occupation" placeholder="Tell us in a few words"></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <!-- 5 -->
+    <div class="screen" data-s="5" data-q="field">
+      <p class="cheer">Halfway there!</p>
+      <h2>Which field are you in?</h2>
+      <p class="hint">Tap one.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>Tech & IT</button>
+        <button class="opt" type="button"><span class="dot"></span>Business, finance & law</button>
+        <button class="opt" type="button"><span class="dot"></span>Health & care</button>
+        <button class="opt" type="button"><span class="dot"></span>Construction & real estate</button>
+        <button class="opt" type="button"><span class="dot"></span>Creative, media & marketing</button>
+        <button class="opt" type="button"><span class="dot"></span>Education</button>
+        <button class="opt" type="button"><span class="dot"></span>Hospitality, travel & events</button>
+        <button class="opt" type="button"><span class="dot"></span>Trade, import & export</button>
+        <button class="opt" type="button" data-other><span class="dot"></span>Other</button>
+      </div>
+      <div class="extra"><label class="f" for="x-field">Tell us in a few words</label><input type="text" id="x-field" placeholder="Tell us in a few words"></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <!-- 6 -->
+    <div class="screen" data-s="6" data-q="project">
+      <p class="cheer">Great answers.</p>
+      <h2>Are you working on something right now?</h2>
+      <p class="hint">Tap one.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>Starting or growing a business</button>
+        <button class="opt" type="button"><span class="dot"></span>Buying, building or renting property</button>
+        <button class="opt" type="button"><span class="dot"></span>Moving to another country</button>
+        <button class="opt" type="button"><span class="dot"></span>Finding a new job</button>
+        <button class="opt" type="button"><span class="dot"></span>Organising an event or community</button>
+        <button class="opt" type="button"><span class="dot"></span>Not yet, I'm exploring</button>
+        <button class="opt" type="button" data-other><span class="dot"></span>Other</button>
+      </div>
+      <div class="extra"><label class="f" for="x-project">What are you working on?</label><input type="text" id="x-project" placeholder="Tell us in a few words"></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <!-- 7 -->
+    <div class="screen" data-s="7" data-q="timing">
+      <p class="cheer">This helps us a lot.</p>
+      <h2>When do you want to make real progress?</h2>
+      <p class="hint">Tap one.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>In the next 3 months</button>
+        <button class="opt" type="button"><span class="dot"></span>This year</button>
+        <button class="opt" type="button"><span class="dot"></span>In 1 to 2 years</button>
+        <button class="opt" type="button"><span class="dot"></span>No rush, I'm just exploring</button>
+      </div>
+      <div class="extra"><label class="f" for="x-timing">Tell us in a few words</label><input type="text" id="x-timing" placeholder="Tell us in a few words"></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <!-- 8 -->
+    <div class="screen" data-s="8" data-q="frustration" data-extra="always">
+      <p class="cheer">Almost there.</p>
+      <h2>What's your biggest frustration right now?</h2>
+      <p class="hint">Tap one. Be honest, it helps us build the right thing.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>I don't know who to trust</button>
+        <button class="opt" type="button"><span class="dot"></span>I don't know where to start</button>
+        <button class="opt" type="button"><span class="dot"></span>I meet people, but nothing follows</button>
+        <button class="opt" type="button"><span class="dot"></span>I've lost time or money on the wrong people</button>
+        <button class="opt" type="button" data-other><span class="dot"></span>Other</button>
+      </div>
+      <div class="extra"><label class="f" for="x-frustration">Want to tell us more? <span class="opt-l">(optional)</span></label><textarea id="x-frustration" rows="3" placeholder="What happened? What would help?"></textarea></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <!-- 9 -->
+    <div class="screen" data-s="9" data-q="can_offer" data-multi="2">
+      <p class="cheer">Two more.</p>
+      <h2>What could you bring to the community?</h2>
+      <p class="hint">Pick up to 2.</p>
+      <div class="opts">
+        <button class="opt multi" type="button"><span class="dot"></span>My skills or services</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Products I sell</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Jobs or opportunities</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Knowledge and advice</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Investment</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Connections</button>
+        <button class="opt multi" type="button"><span class="dot"></span>Just here to connect for now</button>
+        <button class="opt multi" type="button" data-other><span class="dot"></span>Other</button>
+      </div>
+      <div class="extra"><label class="f" for="x-can_offer">What would you bring?</label><input type="text" id="x-can_offer" placeholder="Tell us in a few words"></div>
+      <div class="spacer"></div>
+      <button class="btn" type="button" data-next disabled>Continue</button>
+    </div>
+
+    <!-- 10 -->
+    <div class="screen" data-s="10" data-q="would_pay">
+      <p class="cheer">Last one!</p>
+      <h2>Would you pay for extras that save you time?</h2>
+      <p class="hint">For example extra features that help you find the right people faster.</p>
+      <div class="opts">
+        <button class="opt" type="button"><span class="dot"></span>Yes, for sure</button>
+        <button class="opt" type="button"><span class="dot"></span>Maybe, it depends on the price</button>
+        <button class="opt" type="button"><span class="dot"></span>No, I'll stick to the free version</button>
+      </div>
+      <div class="extra"><label class="f" for="x-would_pay">Tell us in a few words</label><input type="text" id="x-would_pay" placeholder="Tell us in a few words"></div>
+      <button class="btn cont" type="button" data-next>Continue</button>
+    </div>
+
+    <datalist id="countries"><option value="Belgium"><option value="Netherlands"><option value="Luxembourg"><option value="France"><option value="Germany"><option value="United Kingdom"><option value="Ireland"><option value="Spain"><option value="Portugal"><option value="Italy"><option value="Switzerland"><option value="Austria"><option value="Sweden"><option value="Norway"><option value="Denmark"><option value="Finland"><option value="Poland"><option value="Ghana"><option value="Nigeria"><option value="Kenya"><option value="South Africa"><option value="Côte d'Ivoire"><option value="Senegal"><option value="Cameroon"><option value="DR Congo"><option value="Congo"><option value="Rwanda"><option value="Uganda"><option value="Tanzania"><option value="Ethiopia"><option value="Togo"><option value="Benin"><option value="Burkina Faso"><option value="Mali"><option value="Guinea"><option value="Sierra Leone"><option value="Liberia"><option value="Gambia"><option value="Zimbabwe"><option value="Zambia"><option value="Angola"><option value="Mozambique"><option value="Morocco"><option value="Egypt"><option value="Tunisia"><option value="Algeria"><option value="Cape Verde"><option value="United States"><option value="Canada"><option value="Jamaica"><option value="Haiti"><option value="Trinidad and Tobago"><option value="Brazil"><option value="Suriname"><option value="Mexico"><option value="United Arab Emirates"><option value="Saudi Arabia"><option value="Qatar"><option value="Turkey"><option value="India"><option value="China"><option value="Japan"><option value="Australia"><option value="New Zealand"></datalist>
+
+    <!-- 6: form -->
+    <form class="screen" data-s="11" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <p class="cheer">You're almost there 🎉</p>
+      <h2>Where do we send your access?</h2>
+      <p class="hint">Finish now to reserve your <b>Founding Member badge</b>. You'll go straight into DiaspoPlug after this.</p>
+      <input type="hidden" name="access_key" value="7bff82df-9018-4cff-828f-3795eb3922d1">
+      <input type="hidden" name="subject" value="New DiaspoPlug founding member">
+      <input type="hidden" name="from_name" value="DiaspoPlug early access">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <label class="f" for="name">First name</label>
+      <input type="text" id="name" name="first_name" autocomplete="given-name" required>
+      <label class="f" for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+      <label class="consent"><input type="checkbox" id="consent" name="consent" value="yes" required> <span>I agree that DiaspoPlug stores my details to give me early access and send me updates. I can unsubscribe at any time. <a href="https://diaspoplug.com/en/privacy" target="_blank" rel="noopener">Privacy</a></span></label>
+      <button class="btn green" type="submit" id="submit">Enter DiaspoPlug →</button>
+      <div class="err" id="err"></div>
+    </form>
+
+    <!-- 7: done -->
+    <div class="screen done" data-s="12">
+      <div class="badge">🏅</div>
+      <div class="medal">FOUNDING MEMBER</div>
+      <h2 id="hello">You're in. Welcome, founding member.</h2>
+      <p>You're one of the first. Your badge is reserved.<br>Taking you to DiaspoPlug…</p>
+      <a class="btn green" id="go" href="https://diaspoplug.com/en/signup">Enter DiaspoPlug →</a>
+    </div>
+  </div>
+</div>
+
+<section class="about">
+  <div class="wrap about-in">
+    <div>
+      <h3>Built by Queenie Kessie</h3>
+      <p>Belgian-born with Ghanaian roots. Founder of Diaspora Connect Global and Chair of the IOM Diaspora Advisory Board for Belgium and Luxembourg.</p>
+      <p>She built DiaspoPlug so people can find people they can trust, wherever they live.</p>
+    </div>
+    <div class="socials">
+      <div class="s-group"><span class="s-h">Follow Queenie</span><div class="s-row">
+        <a class="soc ig" href="https://www.instagram.com/queeniekessie/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span class="tx"><b>Instagram</b><small>@queeniekessie</small></span></a>
+        <a class="soc fb" href="https://www.facebook.com/553665511170508/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></span><span class="tx"><b>Facebook</b><small>Queenie Kessie</small></span></a>
+        <a class="soc li" href="https://www.linkedin.com/in/dr-queenie-kessie/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><span class="tx"><b>LinkedIn</b><small>Queenie Kessie</small></span></a>
+        <a class="soc tt" href="https://www.tiktok.com/@queeniekessie" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="tx"><b>TikTok</b><small>@queeniekessie</small></span></a>
+        <a class="soc yt" href="https://www.youtube.com/@queeniekessie3410" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span class="tx"><b>YouTube</b><small>Queenie Kessie</small></span></a>
+      </div></div>
+      <div class="s-group"><span class="s-h">Follow Diaspora Connect Global</span><div class="s-row">
+        <a class="soc ig" href="https://www.instagram.com/diaspora_connect_global/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span class="tx"><b>Instagram</b><small>@diaspora_connect_global</small></span></a>
+        <a class="soc fb" href="https://www.facebook.com/782235391642537/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></span><span class="tx"><b>Facebook</b><small>Diaspora Connect Global</small></span></a>
+        <a class="soc li" href="https://www.linkedin.com/company/diasporaconnectglobal" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><span class="tx"><b>LinkedIn</b><small>Diaspora Connect Global</small></span></a>
+        <a class="soc yt" href="https://www.youtube.com/@diasporaconnectglobal" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span class="tx"><b>YouTube</b><small>Diaspora Connect Global</small></span></a>
+        <a class="soc web" href="https://diasporaconnectglobal.com/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span><span class="tx"><b>Website</b><small>diasporaconnectglobal.com</small></span></a>
+      </div></div>
+      <div class="s-group"><span class="s-h">The app</span><div class="s-row">
+        <a class="soc app" href="https://diaspoplug.com/en/signup" target="_blank" rel="noopener"><span class="ic"><img src="favicon.svg" alt=""></span><span class="tx"><b>DiaspoPlug</b><small>Join the app</small></span></a>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<footer><div class="wrap">© DiaspoPlug · Diaspora Connect Global</div></footer>
+
+<script>
+  const APP='https://diaspoplug.com/en/signup';
+  const screens=[...document.querySelectorAll('.screen')];
+  const QUESTIONS=10, answers={};
+  const src=new URLSearchParams(location.search).get('src')||'direct';
+  let cur=0;
+
+  function show(n){
+    const back=n<cur; cur=n;
+    screens.forEach(s=>{ const on=+s.dataset.s===n; s.classList.toggle('on',on); s.classList.toggle('back-in',on&&back); });
+    if(n>0&&window.innerWidth<900){ const q=document.getElementById('quiz'); const r=q.getBoundingClientRect(); if(r.top<0||r.top>window.innerHeight*.4) q.scrollIntoView({behavior:'smooth',block:'start'}); }
+    // Voortgang start niet op 0 (endowed progress): intro = 10%, formulier = bijna vol
+    const pct=n===0?10:Math.min(100,10+n*(90/(QUESTIONS+2)));
+    document.getElementById('bar').style.width=pct+'%';
+    document.getElementById('stepn').textContent=(n>=1&&n<=QUESTIONS)?n+' / '+QUESTIONS:(n===QUESTIONS+1?'Last step':'');
+    document.getElementById('back').style.visibility=(n>=1&&n<=QUESTIONS+1)?'visible':'hidden';
+    if(n===QUESTIONS+1) setTimeout(()=>document.getElementById('name').focus(),250);
+    if(n===2) setTimeout(()=>document.getElementById('t-country').focus(),250);
+  }
+  document.getElementById('back').addEventListener('click',()=>show(Math.max(0,cur-1)));
+  document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(cur+1)));
+
+  // Antwoorden + "Other"/extra tekst. Enkelvoudig zonder extra veld = tikken en meteen door.
+  screens.filter(s=>s.dataset.q).forEach(s=>{
+    const q=s.dataset.q, max=+s.dataset.multi||0, always=s.dataset.extra==='always';
+    const opts=[...s.querySelectorAll('.opt')], extra=s.querySelector('.extra'), cont=s.querySelector('.btn.cont');
+    const field=extra&&extra.querySelector('input,textarea');
+    const label=o=>o.textContent.trim();
+    function sync(){
+      const sel=[...s.querySelectorAll('.opt.sel')];
+      answers[q]=sel.map(label).join(' | ');
+      const other=sel.some(o=>o.hasAttribute('data-other'));
+      if(extra) extra.classList.toggle('show',always?sel.length>0:other);
+      if(cont) cont.classList.toggle('show',sel.length>0&&(always||other));
+      if(max) s.querySelector('[data-next]').disabled=!sel.length;
+      if(!always&&!other) delete answers[q+'_detail']; // "Other" weer uitgezet: oude uitleg niet meesturen
+      else if(field&&field.value.trim()) answers[q+'_detail']=field.value.trim();
+      return other;
+    }
+    opts.forEach(o=>o.addEventListener('click',()=>{
+      if(max){
+        if(o.classList.contains('sel')) o.classList.remove('sel');
+        else if(s.querySelectorAll('.opt.sel').length<max) o.classList.add('sel');
+        if(sync()&&o.hasAttribute('data-other')&&o.classList.contains('sel')) setTimeout(()=>field.focus(),50);
+      }else{
+        opts.forEach(x=>x.classList.remove('sel')); o.classList.add('sel');
+        const other=sync();
+        if(always||other){ if(field) setTimeout(()=>field.focus(),50); }
+        else setTimeout(()=>show(cur+1),220);
+      }
+    }));
+    if(field) field.addEventListener('input',()=>{ const v=field.value.trim(); if(v) answers[q+'_detail']=v; else delete answers[q+'_detail']; });
+    if(field&&field.tagName==='INPUT') field.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); (cont||s.querySelector('[data-next]')).click(); } });
+  });
+
+  // Tekstscherm (land + stad)
+  const tc=document.getElementById('t-country'), tcity=document.getElementById('t-city'), tbtn=document.querySelector('[data-s="2"] [data-next]');
+  function syncText(){ const c=tc.value.trim(), ci=tcity.value.trim(); if(c) answers.country=c; else delete answers.country; if(ci) answers.city=ci; else delete answers.city; tbtn.disabled=!c; }
+  [tc,tcity].forEach(i=>{ i.addEventListener('input',syncText); i.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!tbtn.disabled){ e.preventDefault(); tbtn.click(); } }); });
+
+  document.getElementById('form').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const f=e.target, err=document.getElementById('err'), btn=document.getElementById('submit');
+    const name=f.first_name.value.trim(), email=f.email.value.trim();
+    if(!name){err.textContent='Please add your first name.';return}
+    if(!/^\S+@\S+\.\S+$/.test(email)){err.textContent='Please add a valid email.';return}
+    if(!document.getElementById('consent').checked){err.textContent='Please tick the box to continue.';return}
+    err.textContent=''; btn.disabled=true; btn.textContent='One moment…';
+    const data=new FormData(f);
+    Object.entries(answers).forEach(([k,v])=>data.append(k,v));
+    data.append('source',src);
+    try{
+      const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:data});
+      const j=await r.json(); if(!j.success) throw new Error(j.message||'error');
+      document.getElementById('hello').textContent="You're in, "+name+". Welcome, founding member.";
+      show(QUESTIONS+2);
+      confetti();
+      if(/^https?:/.test(APP)) setTimeout(()=>location.href=APP,3500);
+    }catch(x){
+      btn.disabled=false; btn.textContent='Enter DiaspoPlug →';
+      err.textContent='Something went wrong. Please try again.';
+    }
+  });
+  // Confetti in de merkkleuren als iemand klaar is
+  function confetti(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const c=document.getElementById('confetti'), x=c.getContext('2d'), d=devicePixelRatio||1;
+    const W=c.width=innerWidth*d, H=c.height=innerHeight*d;
+    const cols=['#5EB130','#004D9D','#2E8A6E','#8FD16A','#3A7BD5','#FFC93C'];
+    const ps=[...Array(160)].map((_,i)=>{ const side=i%2?1:-1; return {x:W/2+side*W*.15,y:H*.55,vx:(Math.random()*9+3)*-side*d*(Math.random()<.5?1:.6)+(Math.random()-.5)*4*d,vy:-(Math.random()*14+8)*d,w:(Math.random()*6+5)*d,h:(Math.random()*8+6)*d,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[i%cols.length],a:1}; });
+    let f=0;(function tick(){ x.clearRect(0,0,W,H); let alive=0;
+      ps.forEach(p=>{ p.vy+=.35*d; p.vx*=.99; p.x+=p.vx; p.y+=p.vy; p.r+=p.vr; if(f>90) p.a-=.012; if(p.a>0&&p.y<H+40){ alive++; x.save(); x.globalAlpha=Math.max(p.a,0); x.translate(p.x,p.y); x.rotate(p.r); x.fillStyle=p.c; x.fillRect(-p.w/2,-p.h/2,p.w,p.h*Math.abs(Math.cos(p.r*2))); x.restore(); } });
+      f++; if(alive) requestAnimationFrame(tick); else x.clearRect(0,0,W,H); })();
+  }
+  show(0);
+</script>
+</body>
+</html>
