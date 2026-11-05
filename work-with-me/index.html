@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work with Queenie Kessie</title>
-<meta name="description" content="Building something? Book an introduction call with Queenie Kessie: Business Consultant · Project Management, entrepreneur and founder of Diaspora Connect Global.">
+<meta name="description" content="Building something? Apply to work with Queenie Kessie: Business Consultant · Project Management, entrepreneur and founder of Diaspora Connect Global.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
@@ -205,6 +205,35 @@
   .card .n,.story .yr{background:var(--wine);color:#fff}
   section.alt{background:#F6F0EA}
   @media (max-width:900px){.band h1{font-size:38px}}
+  /* v3 (05/11): who / not-for / testimonials wall / application form */
+  .notfor{margin-top:26px;border:1.5px dashed #E2CFC0;border-radius:20px;padding:22px 26px;background:#fff}
+  .notfor h3{margin:0 0 8px;color:var(--wine)}
+  .notfor ul{margin:0;padding-left:20px;color:#5E5557}.notfor li{margin:6px 0}.notfor a{color:var(--wine);font-weight:700}
+  .twall{columns:3 300px;column-gap:18px}
+  .tcard{break-inside:avoid;margin:0 0 18px;background:#fff;border:1.5px solid #EFE6DC;border-radius:20px;padding:22px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .tcard:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(104,35,46,.08)}
+  .tcard .stars{color:#C9973F;letter-spacing:2px;font-size:15px}.tcard .stars span{color:#8A7F7A;font-size:12px;letter-spacing:0;margin-left:8px;font-weight:700}
+  .tcard h3{margin:8px 0 8px;font-size:17px;color:var(--wine-d)}
+  .tcard blockquote{margin:0 0 16px;color:#3A2E30;font-size:15px}
+  .tcard figcaption{display:flex;gap:12px;align-items:center}
+  .tcard .av{flex:none;width:40px;height:40px;border-radius:50%;background:var(--wine);color:var(--cream);display:grid;place-content:center;font-weight:800;font-size:14px}
+  .tcard b{display:block;font-size:14px}.tcard small{display:block;color:#8A7F7A;font-size:12.5px;line-height:1.35}
+  .abouttxt p{color:#5E5557;margin:0 0 12px}
+  .apply{background:#fff;border:1.5px solid #EFE6DC;border-radius:28px;padding:44px 32px;margin:0 0 70px;scroll-margin-top:20px}
+  .apply>h2,.apply>.sub{text-align:center;margin-left:auto;margin-right:auto}
+  .aform{max-width:720px;margin:0 auto;display:grid;gap:14px}
+  .aform label{display:grid;gap:6px;font-weight:700;font-size:14px;color:var(--ink)}
+  .aform input,.aform select,.aform textarea{font:inherit;font-weight:500;font-size:15px;padding:13px 14px;border:1.5px solid #E6DACD;border-radius:14px;background:#FFFDF9;color:var(--ink);width:100%}
+  .aform input:focus,.aform select:focus,.aform textarea:focus{outline:none;border-color:var(--wine);box-shadow:0 0 0 3px rgba(104,35,46,.12)}
+  .aform .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .aform .chk{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:13.5px;color:#5E5557}
+  .aform .chk input{width:auto;margin-top:3px}
+  .aform .btn{border:0;cursor:pointer;justify-self:center;margin-top:6px;background:var(--wine);color:#fff}
+  .fmsg{text-align:center;color:var(--wine);font-weight:700;min-height:1em;margin:0}
+  .fdone{text-align:center;max-width:520px;margin:0 auto}.fdone h3{color:var(--wine)}
+  @media (max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.grid4,.aform .row2{grid-template-columns:1fr}.apply{padding:32px 18px}}
+
 </style>
 </head>
 <body>
@@ -214,9 +243,9 @@
 <div class="wrap hero">
   <div>
     <span class="role">Business consultancy &amp; project management</span>
-    <h1>Your next chapter in Africa, <em>with a clear plan.</em></h1>
-    <p class="lead">I help people in the diaspora start and run projects in Africa. We work out a realistic plan, I connect you with local people I trust, and I keep track of the work while you are abroad.</p>
-    <div class="hero-cta"><a class="btn" href="https://calendly.com/queeniekessie-vc-x/30min" target="_blank" rel="noopener">Book an introduction →</a><a class="btn-s" href="#services">Explore my services</a></div><p class="meta">Introduction call · <b>30 minutes</b> · €50</p>
+    <h1>Build your project between Europe and Africa, <em>with people you can trust.</em></h1>
+    <p class="lead">I help professionals, companies, investors and leaders turn a cross-border plan into a project that runs on the ground, with structure, contracts and tested people.</p>
+    <div class="hero-cta"><a class="btn" href="#apply">Apply to work with me →</a><a class="btn-s" href="#reviews">Read what clients say</a></div>
   </div>
   
   <div class="slides" id="slides" aria-label="Photos of Queenie Kessie">
@@ -245,6 +274,28 @@
       <div class="pain">"Who can I trust?"<small>Everyone sounds sure. Not everyone delivers.</small></div>
       <div class="pain">"The work keeps coming back to me."<small>You asked for help. Now you check, chase and fix it yourself.</small></div>
       <div class="pain">"Cheap help got expensive."<small>The wrong person costs you money, time and your peace of mind.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2 id="who">Who I work with</h2>
+    <p class="sub">Four kinds of people come to me. If you see yourself here, apply below.</p>
+    <div class="grid4">
+      <div class="card"><div class="n">1</div><h3>You built something for Africa</h3><p>You work full-time in Europe and built a product for the African market. You need reliable people on the ground, and you don't want your product to stay invisible.</p></div>
+      <div class="card"><div class="n">2</div><h3>Your company wants to enter Africa</h3><p>You lead an established European company and want to start through Ghana. You've never been there and have no time. You need someone you can trust to coordinate on the ground.</p></div>
+      <div class="card"><div class="n">3</div><h3>You have capital, not direction</h3><p>You want to invest, import or export in Africa and create real jobs. You don't have the time to research. I help you find the direction and the right partners.</p></div>
+      <div class="card"><div class="n">4</div><h3>You lead a community</h3><p>Your church, school or organisation needs a speaker or trainer. I help your audience find purpose, confidence and practical business knowledge.</p></div>
+    </div>
+    <div class="notfor">
+      <h3>Not for you if…</h3>
+      <ul>
+        <li>You want shortcuts and don't want to work with contracts and clear agreements</li>
+        <li>You think you can copy-paste Europe into Africa without building your own structure</li>
+        <li>You are only looking for someone to fund your idea</li>
+        <li>You are looking for a job. Then join <a href="https://asofficialagency-source.github.io/queenie/join-diaspoplug/">DiaspoPlug</a>, our community app</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -307,25 +358,36 @@
 <section class="reveal alt">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="sub">Three steps. No long forms.</p>
+    <p class="sub">No calendar, no payment upfront. I read every application myself.</p>
     <div class="grid3">
-      <div class="card"><div class="n">1</div><h3>Book your time</h3><p>Pick a time in my calendar. Then answer a few short questions about your project.</p><a class="lk" href="https://calendly.com/queeniekessie-vc-x/30min" target="_blank" rel="noopener">Book your call →</a></div>
-      
-      <div class="card"><div class="n">2</div><h3>€50 introduction fee</h3><p>For a 30-minute call, just you and me.</p></div>
-      <div class="card"><div class="n">3</div><h3>Get your next step</h3><p>We talk for 30 minutes. You leave with a clear next step, even if we don't work together.</p></div>
+      <div class="card"><div class="n">1</div><h3>Apply</h3><p>Fill in the short form below: who you are, what you want to build and where.</p><a class="lk" href="#apply">Go to the form →</a></div>
+      <div class="card"><div class="n">2</div><h3>I read it myself</h3><p>I go through your answers personally and reply by email within a few working days.</p></div>
+      <div class="card"><div class="n">3</div><h3>Call and next step</h3><p>If we're a fit, we plan a call. You leave with a clear next step, even if we don't work together.</p></div>
     </div>
   </div>
 </section>
 
 
-<section class="reveal" hidden style="display:none">
+<section class="reveal alt" id="reviews">
   <div class="wrap">
-    <h2>Results</h2>
-    <p class="sub">What people say after working with me.</p>
-    <div class="quotes">
-      <div class="quote"><p>"[Testimonial 1]"</p><b>[Name]</b><small>[Role, country]</small></div>
-      <div class="quote"><p>"[Testimonial 2]"</p><b>[Name]</b><small>[Role, country]</small></div>
-      <div class="quote"><p>"[Testimonial 3]"</p><b>[Name]</b><small>[Role, country]</small></div>
+    <h2>What people say about working with me</h2>
+    <p class="sub">Real words from clients, partners and people I worked with in Ghana and Belgium. Nothing edited.</p>
+    <div class="twall">
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>She put her credibility on the line</h3><blockquote>"What stood out most was her genuine willingness to put her own credibility on the line for me. She didn&#x27;t hesitate to introduce me and directly recommend my services to high-profile stakeholders and key decision-makers who would have otherwise been difficult to reach."</blockquote><figcaption><span class="av">EL</span><span><b>Emmanuel Lucky Ardey</b><small>Eco Aquaponic Ventures, Accra, Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>The right team in Ghana</h3><blockquote>"Queenie connected me with a team in Ghana that helped me structure my event and also work on my brand."</blockquote><figcaption><span class="av">IN</span><span><b>Isaac Nanka Bruce</b><small>Voltix Energy LTD, Accra / Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>Meetings with potential investors</h3><blockquote>"Since returning to Ghana, she has taken time to arrange meetings with potential investors, meet with me personally, listen to what I am building, understand my ambitions and discuss practical ways she could help me move closer to achieving them."</blockquote><figcaption><span class="av">SS</span><span><b>Stephen Selorm Bedzrah</b><small>Software Developer / Entrepreneur, Accra, Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>Training for 70 staff</h3><blockquote>"She was able to provide a great training to my staff that brought great productivity."</blockquote><figcaption><span class="av">CO</span><span><b>Charles Oppong Boateng</b><small>Director, Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>A lot more clients</h3><blockquote>"Through Queen I have had a lot more of clients to work with and one thing I like about her is she&#x27;s very honest... and she&#x27;s very good with her timeline too."</blockquote><figcaption><span class="av">DJ</span><span><b>David Joey Okyere</b><small>CEO ebrand identity, Accra, Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>The right designer, the right locals</h3><blockquote>"She introduced me to a graphic designer who brought my vision to life... Professionalism, honesty, industry knowledge, network, excellence are some of the many things you can expect, when working with Queenie."</blockquote><figcaption><span class="av">RY</span><span><b>Rhoda Yeboah</b><small>Customer Success Manager, Belgium</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>A transformative experience</h3><blockquote>"My encounter with Dr. Queenie Kessie has been a remarkable and transformative experience in my personal, professional, and ministerial journey. She has played a significant role in restructuring my brand."</blockquote><figcaption><span class="av">RI</span><span><b>Rev. Isaac Frimpong</b><small>Founder, Kumasi, Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>Vendors and speakers, sorted</h3><blockquote>"She supported us in securing affordable vendors and speakers for our event."</blockquote><figcaption><span class="av">BD</span><span><b>Blessing Douglas</b><small>Founder Boma Prize for Africa, United States of America</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>Very professional</h3><blockquote>"Queenie is very professional. She makes sure she does the job well and listens to your wishes as her client. She is hard working, committed and it&#x27;s easy to communicate with her."</blockquote><figcaption><span class="av">MK</span><span><b>Minou Keijenberg</b><small>Owner restaurant Giuseppe, Epen, The Netherlands</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>Integrity and resourceful</h3><blockquote>"Quennie has a lot of integrity, she has a strong mind on her shoulders and she is very resourceful. And also, very accessible."</blockquote><figcaption><span class="av">J</span><span><b>Jessy</b><small>Founder, Mechelen - belgium</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="8/10">★★★★<span>8/10</span></div><h3>A restructured organisation</h3><blockquote>"She helped restructured my organisation."</blockquote><figcaption><span class="av">DK</span><span><b>Darkwah Kwame</b><small>CEO THE PURPOSE ACADEMY VZW, Belgium</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="10/10">★★★★★<span>10/10</span></div><h3>Honest and practical</h3><blockquote>"What I appreciated most was how honest she was. She shared her challenges openly, she didn&#x27;t hide anything. That honesty made it so relatable."</blockquote><figcaption><span class="av">SB</span><span><b>Sarah Berko</b><small>EHS, Lawrenceville, USA</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="9/10">★★★★<span>9/10</span></div><h3>The best foundation for my career</h3><blockquote>"Working with Queenie was one of the best foundations I could have had at the beginning of my career."</blockquote><figcaption><span class="av">EA</span><span><b>Emmanuella Anim</b><small>Public relations persons, Accra Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="8/10">★★★★<span>8/10</span></div><h3>More than a manager</h3><blockquote>"She was more than a manager; she was always willing to help and share her knowledge and skills. She also provided training and created opportunities for professional growth."</blockquote><figcaption><span class="av">EB</span><span><b>Enoch Boateng</b><small>HR Supervisor, Vacancies Ltd, Accra, Ghana</small></span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="8/10">★★★★<span>8/10</span></div><h3>Insightful for our community</h3><blockquote>"She gave a workshop to our community about social media. It was very insightful to our audience."</blockquote><figcaption><span class="av">WA</span><span><b>Wendy Agyin</b><small>Head business coach - #SheDidit, Belgium</small></span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -337,7 +399,12 @@
     <div>
       <h2>Hi, I'm Queenie.</h2>
       <p class="sub" style="margin-bottom:12px">Born in Belgium. Rooted in Ghana. I build between both worlds.</p>
-      <p class="sub" style="margin-bottom:0">I know what it's like to have a big plan for Africa and still ask: who do I trust, and where do I start? A good introduction is only the start. We check the right partners and agree on a plan that works.</p>
+      <div class="abouttxt">
+        <p>I was born in Brussels, raised in Belgium and rooted in Ghana. My parents both built businesses in Belgium, so I learned early what it takes to start from nothing.</p>
+        <p>Since 2018 I have worked between Europe and Ghana. I spent 12 months building and running a local team in Ghana for a European company entering Africa. For a client in Belgium, one job post for a team in Sierra Leone brought in more than 40 applications.</p>
+        <p>I also know failure. I once moved to Ghana and came back after six months, because I wasn't ready. That taught me the most important lesson: you can't copy-paste Europe into Africa. A team there can cost less, but it is not without stress. You need your own structure, everything in writing, integrity, and you have to be strict.</p>
+        <p>Today I'm the founder of Diaspora Connect Global and DiaspoPlug, Chair of the IOM Diaspora Advisory Board for Belgium and Luxembourg, and I speak at universities, schools and companies.</p>
+      </div>
       
       <ul class="story">
         <li><div class="yr">2018</div><div><b>First business with Ghana</b><span>Logistics between Europe and Ghana, the start of my network on the ground</span></div></li>
@@ -352,11 +419,11 @@
 
 <section class="reveal alt">
   <div class="wrap">
-    <h2>Your introduction call</h2>
-    <p class="sub">30 minutes, just you and me. Here is what you get.</p>
+    <h2>After you apply</h2>
+    <p class="sub">If your project is a fit, we have a call. Here is what you get.</p>
     <div class="call">
-      <div class="card"><h3>In the call</h3><ul><li>You tell me what you want to build</li><li>We look at what's in the way: plan, people, time, distance</li><li>I tell you honestly what you need next</li><li>If we're a fit, I explain how we can work together</li></ul><p class="note">€50 · 30 minutes · introduction call</p></div>
-      <div class="card"><h3>You walk away with</h3><ul><li>A clear next step, even if we don't work together</li><li>An honest view of your plan and your people</li><li>Answers to your biggest questions</li></ul><h3 style="margin-top:18px">Not for you if…</h3><ul><li>You only have a quick question (join DiaspoPlug instead)</li><li>You're not ready to take action yet</li></ul></div>
+      <div class="card"><h3>In the call</h3><ul><li>You tell me what you want to build</li><li>We look at what's in the way: plan, people, time, distance</li><li>I tell you honestly what you need next</li><li>If we're a fit, I explain how we can work together and what it costs</li></ul></div>
+      <div class="card"><h3>You walk away with</h3><ul><li>A clear next step, even if we don't work together</li><li>An honest view of your plan and your people</li><li>Answers to your biggest questions</li></ul></div>
     </div>
   </div>
 </section>
@@ -364,24 +431,101 @@
 <section class="reveal faq">
   <div class="wrap">
     <h2>Questions</h2>
-    <p class="sub">What people often ask before they book.</p>
-    <details><summary>Why is the call paid?</summary><p>So I can give every serious project my full focus. You get 30 minutes and an honest answer about your next step.</p></details>
-    <details><summary>How do you know the people you introduce are good?</summary><p>I check them before I introduce you: what they can do, and by when. If I don't have the right person, I tell you.</p></details>
-    <details><summary>Can this work if I live far away?</summary><p>That is what I help with. We agree on clear tasks and deadlines. You get updates, so you can see what is done without being there.</p></details>
-    <details><summary>Can you promise me a deal?</summary><p>No. An introduction is a start, not a deal. I am clear about what I do and what depends on others.</p></details>
-    
-    <details><summary>How does booking work?</summary><p>Pick a time in my calendar and answer a few short questions. The call costs €50 and takes 30 minutes.</p></details>
-    <details><summary>I only have a small question. What do I do?</summary><p>Join DiaspoPlug, our community app. It's made for quick questions and new contacts: <a href="https://asofficialagency-source.github.io/queenie/join-diaspoplug/?src=work-with-queenie">find your people</a>.</p></details>
+    <p class="sub">Read these before you apply. They save us both time.</p>
+    <details><summary>Who do you work with?</summary><p>Professionals building something for Africa, European companies entering Africa, investors with capital, and leaders who book speakers or trainers. If you want to build across borders with structure, we can talk.</p></details>
+    <details><summary>Is this only about Africa?</summary><p>My network and experience are strongest in Ghana and between Europe and Africa. That is where I can really help you.</p></details>
+    <details><summary>Do I need to live in Africa or travel all the time?</summary><p>No. You can stay in Europe while we build your structure and team on the ground, so the work moves without you being there every week.</p></details>
+    <details><summary>Can you fund my project?</summary><p>No, I don't fund projects. When someone asks me for money, I ask for their CV and help them find work instead.</p></details>
+    <details><summary>Can you promise me a deal or results?</summary><p>No. An introduction is an open door, not a signed deal. What happens next depends on your project, your discipline and how we execute.</p></details>
+    <details><summary>How do you check the people you introduce?</summary><p>I only introduce people I have tested and worked with on the ground. If I don't have the right person, I tell you.</p></details>
+    <details><summary>What happens after I apply?</summary><p>I read your application myself and reply by email within a few working days. If we're a fit, we plan a call.</p></details>
+    <details><summary>I still have a 9-to-5. Can I work with you?</summary><p>Yes. Many people build while they work, I did it myself. We set up the structure so your project moves next to your job.</p></details>
+    <details><summary>What does it cost?</summary><p>It depends on your project, the scope and the timeline. We talk about it after I've read your application, I don't post fixed prices.</p></details>
+    <details><summary>Can I book you to speak or train?</summary><p>Yes, I speak and train at universities, schools, companies, churches and organisations. Apply with the form and choose speaking or training.</p></details>
+    <details><summary>I&#x27;m looking for a job. What do I do?</summary><p>This page is for people who build or invest. Join <a href="https://asofficialagency-source.github.io/queenie/join-diaspoplug/">DiaspoPlug</a>, our community app, for opportunities and new contacts.</p></details>
+    <details><summary>How long until my project runs?</summary><p>It depends on your sector and where you start. Good structure takes time, so we set realistic milestones together.</p></details>
   </div>
 </section>
 
 <div class="wrap">
-  <div class="cta reveal" id="book">
-    <h2>Ready to build with the right people?</h2>
-    <p class="sub" style="margin:0 auto 10px">Book a 30-minute call. You leave with a clear next step.</p>
-    <p class="note" style="margin:0 0 22px">€50 · 30 minutes · introduction call</p>
-    <a class="btn" href="https://calendly.com/queeniekessie-vc-x/30min" target="_blank" rel="noopener">Book your call</a>
+  <div class="apply reveal" id="apply">
+    <h2>Apply to work with me</h2>
+    <p class="sub">Tell me what you want to build. I read every application myself and reply by email within a few working days.</p>
+    <form id="appForm" class="aform" novalidate>
+      <input type="hidden" name="access_key" value="f03c8856-0b99-4092-97a5-17569a44b0a9">
+      <input type="hidden" name="subject" value="New application for Queenie Kessie">
+      <input type="hidden" name="from_name" value="Queenie Kessie · Work with me">
+      <input type="hidden" name="ccemail" value="contact@diasporaconnectglobal.com">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="row2">
+        <label>Full name *<input name="Full name" required autocomplete="name"></label>
+        <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+      </div>
+      <div class="row2">
+        <label>WhatsApp number<input name="WhatsApp" autocomplete="tel" placeholder="+32 …"></label>
+        <label>Where do you live? *<input name="City and country" required placeholder="City, country"></label>
+      </div>
+      <label>Which describes you best? *
+        <select name="Profile" required>
+          <option value="">Choose one</option>
+          <option>I work in Europe and built a product or project for Africa</option>
+          <option>I lead a company that wants to enter Africa</option>
+          <option>I have capital and want to invest, import or export</option>
+          <option>I lead a church, school or organisation and need a speaker or trainer</option>
+          <option>Other</option>
+        </select></label>
+      <label>What do you want to build, and in which country? *<textarea name="Project and country" required rows="4" placeholder="A few sentences is enough"></textarea></label>
+      <div class="row2">
+        <label>Where are you now? *
+          <select name="Stage" required>
+            <option value="">Choose one</option>
+            <option>Idea, nothing started yet</option>
+            <option>Ready to enter the market</option>
+            <option>Already running, I need structure</option>
+            <option>Speaking or training request</option>
+          </select></label>
+        <label>Budget for this project *
+          <select name="Budget" required>
+            <option value="">Choose one</option>
+            <option>Under €5,000</option>
+            <option>€5,000 – €15,000</option>
+            <option>€15,000 – €50,000</option>
+            <option>€50,000+</option>
+            <option>Not sure yet</option>
+          </select></label>
+      </div>
+      <label>When do you want to start, and what have you tried so far? *<textarea name="Timeline and what they tried" required rows="3"></textarea></label>
+      <label>How did you find me?
+        <select name="Found via">
+          <option value="">Choose one</option>
+          <option>Instagram</option><option>LinkedIn</option><option>YouTube</option><option>Someone recommended you</option><option>An event where you spoke</option><option>Diaspora Connect Global / DiaspoPlug</option><option>Other</option>
+        </select></label>
+      <label class="chk"><input type="checkbox" name="Consent" value="Yes" required> I agree that Queenie Kessie stores my answers to review my application and contact me by email or WhatsApp.</label>
+      <button class="btn" type="submit">Send my application</button>
+      <p class="fmsg" id="fmsg" role="status"></p>
+    </form>
+    <div class="fdone" id="fdone" hidden>
+      <h3>Thank you, your application is in.</h3>
+      <p>I'll read it myself and reply by email within a few working days. Check your spam folder too.</p>
+    </div>
   </div>
+<script>
+(function(){
+  const f=document.getElementById('appForm'),m=document.getElementById('fmsg');
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();m.textContent='Please fill in the fields marked with *';return;}
+    const b=f.querySelector('button');b.disabled=true;b.textContent='Sending…';m.textContent='';
+    const d=new FormData(f);d.set('subject','New application for Queenie: '+(d.get('Full name')||''));
+    try{
+      const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d});const j=await r.json();
+      if(j.success){f.hidden=true;document.getElementById('fdone').hidden=false;}
+      else throw new Error(j.message||'error');
+    }catch(err){m.textContent='Something went wrong. Please try again, or send a DM on Instagram @queeniekessie.';b.disabled=false;b.textContent='Send my application';}
+  });
+})();
+</script>
+
 </div>
 
 <footer><div class="wrap foot">
