@@ -198,6 +198,24 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   .hear-h{flex-direction:column;gap:2px}
 }
 
+/* find me online */
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wk{display:flex;align-items:center;gap:14px;text-decoration:none;background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;transition:border-color .2s,transform .25s var(--ease),box-shadow .25s var(--ease)}
+.wk:hover{border-color:var(--cream);transform:translateY(-2px);box-shadow:0 12px 28px rgba(104,35,46,.08)}
+.wk:focus-visible,.pl:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.wi{flex:none;width:44px;height:44px;border-radius:13px;background:var(--wine);display:grid;place-content:center}
+.wi svg{width:22px;height:22px;fill:var(--cream)}
+.wi svg.ln{fill:none;stroke:var(--cream);stroke-width:1.7}
+.wk b{display:block;font-size:15px;color:var(--ink)}
+.wk small{display:block;font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
+.wk .go{margin-left:auto;color:var(--wine);font-weight:700}
+.follow-h{margin:30px 0 12px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pl{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:14px;color:var(--wine-d);background:var(--cream-l);border:1.5px solid var(--cream);border-radius:999px;padding:10px 16px}
+.pl:hover{background:#fff;border-color:var(--wine)}
+.pl svg{width:17px;height:17px;fill:var(--wine)}
+@media (max-width:640px){.works{grid-template-columns:1fr}}
+
 /* about */
 .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
 .about .pic{border-radius:26px;overflow:hidden;aspect-ratio:4/5;max-width:440px}
@@ -528,6 +546,28 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 
 <section class="reveal" style="padding-top:0">
   <div class="wrap">
+    <span class="eyebrow">Find me online</span>
+    <h2>See my work.</h2>
+    <p class="sub">The platforms I built for the diaspora, and where you can follow along.</p>
+    <div class="works">
+        <a class="wk" href="https://diasporaconnectglobal.com/" target="_blank" rel="noopener"><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true" class="ln"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span><b>Diaspora Connect Global</b><small>Website · diasporaconnectglobal.com</small></span><span class="go" aria-hidden="true">↗</span></a>
+        <a class="wk" href="https://asofficialagency-source.github.io/queenie/join-diaspoplug/" target="_blank" rel="noopener"><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true" class="ln"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg></span><span><b>DiaspoPlug app</b><small>Community app for the diaspora</small></span><span class="go" aria-hidden="true">↗</span></a>
+        <a class="wk" href="https://www.instagram.com/diaspora_connect_global/" target="_blank" rel="noopener"><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.7a5.1 5.1 0 100 10.2 5.1 5.1 0 000-10.2zm0 8.4a3.3 3.3 0 110-6.6 3.3 3.3 0 010 6.6zm5.3-9.8a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg></span><span><b>Diaspora Connect Global</b><small>Instagram · @diaspora_connect_global</small></span><span class="go" aria-hidden="true">↗</span></a>
+        <a class="wk" href="https://www.youtube.com/@diasporaconnectglobal" target="_blank" rel="noopener"><span class="wi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.6 12 31 31 0 001 16.8a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg></span><span><b>Diaspora Connect Global</b><small>YouTube channel</small></span><span class="go" aria-hidden="true">↗</span></a>
+    </div>
+    <p class="follow-h">Follow me</p>
+    <div class="pills">
+        <a class="pl" href="https://www.instagram.com/queeniekessie/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.7a5.1 5.1 0 100 10.2 5.1 5.1 0 000-10.2zm0 8.4a3.3 3.3 0 110-6.6 3.3 3.3 0 010 6.6zm5.3-9.8a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>Instagram</a>
+        <a class="pl" href="https://www.linkedin.com/in/dr-queenie-kessie/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.5 2.8-1.5 3 0 3.6 2 3.6 4.6V19z"/></svg>LinkedIn</a>
+        <a class="pl" href="https://www.youtube.com/@queeniekessie" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.6 12 31 31 0 001 16.8a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube</a>
+        <a class="pl" href="https://www.tiktok.com/@queeniekessie" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 11-2.1-2.8V9.1a6.4 6.4 0 105.5 6.3V8.6a7.9 7.9 0 004.4 1.4V6.6a4.5 4.5 0 01-4.4-4.6z"/></svg>TikTok</a>
+        <a class="pl" href="https://www.facebook.com/queenie.kessie/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.6c0-.9.6-1.1 1-1.1h2.6V1.6L14.1 1.6C10.2 1.6 9.3 4.5 9.3 6.4v2.1H7v4h2.3V22.4H14V12.5h3.2l.4-4z"/></svg>Facebook</a>
+    </div>
+  </div>
+</section>
+
+<section class="reveal" style="padding-top:0">
+  <div class="wrap">
     <div class="center"><span class="eyebrow">Questions</span><h2>Before you book</h2></div>
     <div class="faq">
       <details><summary>Who do you work with?</summary><p>Entrepreneurs, companies and investors who want to build, grow or invest between Europe and Africa. Some already run a business. Others still have a 9-to-5 and want to start. If you want to build across borders with structure, we can talk.</p></details>
@@ -567,7 +607,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
     <div class="socials">
     <a href="https://www.instagram.com/queeniekessie/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.7a5.1 5.1 0 100 10.2 5.1 5.1 0 000-10.2zm0 8.4a3.3 3.3 0 110-6.6 3.3 3.3 0 010 6.6zm5.3-9.8a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>@queeniekessie</a>
     <a href="https://www.linkedin.com/in/dr-queenie-kessie/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.5 2.8-1.5 3 0 3.6 2 3.6 4.6V19z"/></svg>LinkedIn</a>
-    <a href="https://www.youtube.com/@queeniekessie3410" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.6 12 31 31 0 001 16.8a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube</a>
+    <a href="https://www.youtube.com/@queeniekessie" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.6 12 31 31 0 001 16.8a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube</a>
     </div>
   </div>
 </footer>
