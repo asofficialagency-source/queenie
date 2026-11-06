@@ -160,6 +160,44 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .show:hover{background:var(--cream-l)}
 .tnote{text-align:center;font-size:13px;color:var(--muted);margin:16px 0 0}
 
+/* video + voice */
+.hear{margin:0 0 44px}
+.hear-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 16px}
+.hear-h h3{margin:0;font-size:20px}
+.hear-h small{color:var(--muted);font-size:13px}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.vc{margin:0;background:#fff;border:1.5px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.vbox{position:relative;aspect-ratio:4/5;background:#1E1718}
+.vbox video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#1E1718}
+.vplay{position:absolute;inset:0;border:0;padding:0;cursor:pointer;background:#1E1718;display:block;width:100%}
+.vplay img{width:100%;height:100%;object-fit:cover}
+.vplay::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,23,24,0) 45%,rgba(30,23,24,.55))}
+.vplay .pb{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:var(--cream);display:grid;place-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s var(--ease)}
+.vplay:hover .pb{transform:translate(-50%,-50%) scale(1.06)}
+.vplay .pb svg{width:24px;height:24px;fill:var(--wine-d);margin-left:4px}
+.vplay .dur{position:absolute;z-index:2;right:12px;bottom:12px;font-size:12px;font-weight:700;color:#fff;background:rgba(0,0,0,.45);border-radius:999px;padding:4px 10px}
+.vplay:focus-visible{outline:3px solid var(--cream);outline-offset:-3px}
+.vc.on .vplay{display:none}
+.vc figcaption{padding:18px 20px 20px}
+.vc blockquote,.ac blockquote{margin:0 0 14px;font-size:15px;font-weight:600;color:var(--ink);line-height:1.5}
+.who{display:flex;gap:12px;align-items:center}
+.who b{display:block;font-size:14.5px}
+.who small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
+.auds{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.ac{margin:0;background:var(--cream-l);border:1.5px solid var(--cream);border-radius:22px;padding:22px}
+.ac .who{margin-bottom:14px}
+.ac audio{width:100%;height:44px;display:block;margin:0 0 14px}
+.ac .tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--wine);margin:0 0 12px}
+.ac .tag svg{width:15px;height:15px;stroke:var(--wine);fill:none;stroke-width:2;stroke-linecap:round}
+.hear-note{text-align:center;font-size:13px;color:var(--muted);margin:16px 0 0}
+@media (max-width:900px){
+  .vids{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;gap:14px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+  .vids::-webkit-scrollbar{display:none}
+  .vc{flex:0 0 78%;max-width:330px;scroll-snap-align:start}
+  .auds{grid-template-columns:1fr}
+  .hear-h{flex-direction:column;gap:2px}
+}
+
 /* about */
 .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
 .about .pic{border-radius:26px;overflow:hidden;aspect-ratio:4/5;max-width:440px}
@@ -258,7 +296,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
   <div>
     <span class="eyebrow">Business consultancy · Project management</span>
     <h1>Build your project across borders, <em>with people you can trust.</em></h1>
-    <p class="lead">I'm Queenie Kessie. Born in Belgium, rooted in Ghana. I help <b>entrepreneurs, companies and investors</b> build between Europe and Africa: the right people, a clear structure and a project that keeps moving.</p>
+    <p class="lead">I'm Queenie Kessie, founder of EMAS Agency and Diaspora Connect Global. I help <b>entrepreneurs, companies and investors</b> build between Europe and Africa: the right people, a clear structure and a project that keeps moving.</p>
     <div class="cta-row">
       <a class="btn" href="https://calendly.com/queeniekessie-vc-x/30min" target="_blank" rel="noopener">Book my call · €50 <span class="arr">→</span></a>
       <a class="btn-ghost" href="#call">What happens on the call</a>
@@ -327,7 +365,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
       <div class="hcard">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg></div>
         <h3>A project that moves</h3>
-        <p>I or a manager I assign follows up the team, the tasks and the problems, and brings you solutions.</p>
+        <p>I, or a manager I assign, follow up on the team, the tasks and the problems, and bring you solutions.</p>
         <ul><li>Project and team management</li><li>Clear tasks and milestones</li><li>Updates without chasing</li></ul>
       </div>
     </div>
@@ -403,6 +441,48 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
     <h2>What people say <em>after working with her.</em></h2>
     <p class="sub">Real words from clients, partners and people she worked with in Ghana, Belgium, the Netherlands and the US.</p>
 
+    <div class="hear">
+      <div class="hear-h"><h3>Hear it from them</h3><small>Tap to play · sound on</small></div>
+      <div class="vids">
+      <figure class="vc">
+        <div class="vbox">
+          <video controls playsinline preload="none" poster="media/sarah-berko-1-poster.jpg" aria-label="Video testimonial from Sarah Berko"><source src="media/sarah-berko-1.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="media/sarah-berko-1.vtt" default></video>
+          <button class="vplay" type="button" aria-label="Play video from Sarah Berko, 2 minutes 45 seconds"><img src="media/sarah-berko-1-poster.jpg" alt="" loading="lazy"><span class="pb"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">2:45</span></button>
+        </div>
+        <figcaption><blockquote>"She's a mentor like no other."</blockquote><div class="who"><span class="av">SB</span><span><b>Sarah Berko</b><small>EHS · Lawrenceville, USA</small></span></div></figcaption>
+      </figure>
+      <figure class="vc">
+        <div class="vbox">
+          <video controls playsinline preload="none" poster="media/emmanuella-anim-poster.jpg" aria-label="Video testimonial from Emmanuella Anim"><source src="media/emmanuella-anim.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="media/emmanuella-anim.vtt" default></video>
+          <button class="vplay" type="button" aria-label="Play video from Emmanuella Anim, 50 seconds"><img src="media/emmanuella-anim-poster.jpg" alt="" loading="lazy"><span class="pb"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:50</span></button>
+        </div>
+        <figcaption><blockquote>"It was the start of a major journey for me in my career."</blockquote><div class="who"><span class="av">EA</span><span><b>Emmanuella Anim</b><small>Public relations · Accra, Ghana</small></span></div></figcaption>
+      </figure>
+      <figure class="vc">
+        <div class="vbox">
+          <video controls playsinline preload="none" poster="media/sarah-berko-2-poster.jpg" aria-label="Video testimonial from Sarah Berko"><source src="media/sarah-berko-2.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="media/sarah-berko-2.vtt" default></video>
+          <button class="vplay" type="button" aria-label="Play video from Sarah Berko, 3 minutes 44 seconds"><img src="media/sarah-berko-2-poster.jpg" alt="" loading="lazy"><span class="pb"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">3:44</span></button>
+        </div>
+        <figcaption><blockquote>"She is your go-to person when it has to do with strategy building and personal development and growth."</blockquote><div class="who"><span class="av">SB</span><span><b>Sarah Berko</b><small>EHS · Lawrenceville, USA</small></span></div></figcaption>
+      </figure>
+      </div>
+      <div class="auds">
+      <figure class="ac">
+        <span class="tag"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>Voice note · 1:33</span>
+        <div class="who"><span class="av">IB</span><span><b>Isaac Nanka Bruce</b><small>Voltix Energy LTD · Accra, Ghana</small></span></div>
+        <audio controls preload="none" aria-label="Voice note from Isaac Nanka Bruce"><source src="media/isaac-nanka-bruce.m4a" type="audio/mp4"><source src="media/isaac-nanka-bruce.mp3" type="audio/mpeg"></audio>
+        <blockquote>"I would actually recommend Queenie's team to everyone... they work hard, they're goal driven, just like Queenie herself."</blockquote>
+      </figure>
+      <figure class="ac">
+        <span class="tag"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>Voice note · 0:42</span>
+        <div class="who"><span class="av">LD</span><span><b>Lois Dogbe</b><small>Strategist · Ghana</small></span></div>
+        <audio controls preload="none" aria-label="Voice note from Lois Dogbe"><source src="media/lois-dogbe.m4a" type="audio/mp4"><source src="media/lois-dogbe.mp3" type="audio/mpeg"></audio>
+        <blockquote>"Your dedication to your cause is very strong and your commitment is very high."</blockquote>
+      </figure>
+      </div>
+      <p class="hear-note">Unedited videos and voice notes, shared with permission.</p>
+    </div>
+
     <div class="feat">
       <figure class="tq big"><div class="mark">"</div><h3>She opens doors</h3><blockquote>She didn't hesitate to introduce me and directly recommend my services to high-profile stakeholders and key decision-makers who would have otherwise been difficult to reach.</blockquote><figcaption><span class="av">EA</span><span><b>Emmanuel Lucky Ardey</b><small>Eco Aquaponic Ventures · Accra, Ghana</small></span></figcaption></figure>
       <figure class="tq big"><div class="mark">"</div><h3>The right team in Ghana</h3><blockquote>Queenie connected me with a team in Ghana that helped me structure my event and also work on my brand.</blockquote><figcaption><span class="av">IB</span><span><b>Isaac Nanka Bruce</b><small>Voltix Energy LTD · Accra, Ghana</small></span></figcaption></figure>
@@ -434,14 +514,14 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
     <div>
       <span class="eyebrow">About Queenie</span>
       <h2>Born in Brussels. <em>Rooted in Ghana.</em></h2>
-      <p>Both my parents are entrepreneurs, so I learned early what it takes to build something from nothing. Today I work between Europe and Africa every week.</p>
+      <p>Both my parents are entrepreneurs, so I learned early what it takes to build something from nothing. Today I work between Europe and Africa.</p>
       <p>People come to me when they want to <b>build, hire, sell, ship or launch</b> something across borders, but don't know the right people or how to move forward. I make the introductions, set up the structure and keep the work moving.</p>
       <ul class="facts">
         <li><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>Founder of EMAS Agency, Diaspora Connect Global and the DiaspoPlug app</li>
         <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Chair of the IOM Diaspora Advisory Board, Belgium &amp; Luxembourg</li>
         <li><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg>Speaker at summits, universities, companies and churches</li>
       </ul>
-      <p class="story">A client in Belgium wanted to build a team in Sierra Leone. I had never been there. One post brought in about 40 applications, and we brought the project to the embassy of Sierra Leone.<small>When I say I'll do something, I do it.</small></p>
+      <p class="story">A client in Belgium wanted to build a team in Sierra Leone. One post brought in about 40 applications, and we brought the project to the embassy of Sierra Leone.<small>"I'm about results. Real businesses, real people, real impact."</small></p>
     </div>
   </div>
 </section>
@@ -498,6 +578,9 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 </div>
 
 <script>
+// video cards: tap poster to play, pause others
+document.querySelectorAll('.vc').forEach(c=>{const v=c.querySelector('video');c.querySelector('.vplay').addEventListener('click',()=>{c.classList.add('on');v.play().catch(()=>{});v.focus()});v.addEventListener('play',()=>document.querySelectorAll('video,audio').forEach(o=>{if(o!==v)o.pause()}))});
+document.querySelectorAll('.ac audio').forEach(a=>a.addEventListener('play',()=>document.querySelectorAll('video,audio').forEach(o=>{if(o!==a)o.pause()})));
 // reveal on scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
